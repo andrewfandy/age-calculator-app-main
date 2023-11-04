@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Age calculator app</title>
 
-</head>
-<body>
-<main>
-  <section class="container">
-    <div class="wrapper">
-      <div class="form-wrapper">
-        <form action="" method="get">
-          <label for="dayID" id="dayID">
-            <span>DAY</span>
-            <input type="number" name="getDay" id="getDay" placeholder="DD">
-          </label>
-          <label for="monthID" id="monthID">
-            <span>MONTH</span>
-            <input type="number" name="getMonth" id="getMonth" placeholder="MM">
-          </label>
-          <label for="yearID" id="yearID">
-            <span>YEAR</span>
-            <input type="number" name="getYear" id="getYear" placeholder="YYYY">
-          </label>
-        </form>
-      </div>
-      <div class="btn-wrapper">
-        <!-- <div class="horizontal-lines"></div> -->
-        <input type="image" src="./assets/images/favicon-32x32.png" alt="submitBtn" class="submitBtn">
-      </div>
-      <div class="display-area-wrapper">
-        <h2 class="show-year-text">
-          <span id="show-year">--</span>
-          years
-        </h2>
-        <h2 class="show-month-text">
-          <span id="show-month">--</span>
-          month
-        </h2>
-        <h2 class="show-day-text">
-          <span id="show-day">--</span>
-          days
-        </h2>
-      </div>
-    </div>
-  </section>
-</main>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="wrapper">
+          <div class="form-wrapper">
+            <form action="" method="get">
+              <label for="dayID" id="dayID">
+                <span>DAY</span>
+                <input
+                  type="number"
+                  name="getDay"
+                  id="getDay"
+                  placeholder="DD"
+                />
+              </label>
+              <label for="monthID" id="monthID">
+                <span>MONTH</span>
+                <input
+                  type="number"
+                  name="getMonth"
+                  id="getMonth"
+                  placeholder="MM"
+                />
+              </label>
+              <label for="yearID" id="yearID">
+                <span>YEAR</span>
+                <input
+                  type="number"
+                  name="getYear"
+                  id="getYear"
+                  placeholder="YYYY"
+                />
+              </label>
+            </form>
+          </div>
+          <div class="btn-wrapper">
+            <!-- <div class="horizontal-lines"></div> -->
+            <input
+              type="image"
+              src="./assets/images/favicon-32x32.png"
+              alt="submitBtn"
+              class="submitBtn"
+            />
+          </div>
+          <div class="display-area-wrapper">
+            <h2 class="show-year-text">
+              <span id="show-year">--</span>
+              years
+            </h2>
+            <h2 class="show-month-text">
+              <span id="show-month">--</span>
+              month
+            </h2>
+            <h2 class="show-day-text">
+              <span id="show-day">--</span>
+              days
+            </h2>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<footer>
-  Created with love by Andrew
-</footer>
-</body>
+    <footer>Created with love by Andrew</footer>
+  </body>
 </html>
