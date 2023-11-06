@@ -21,57 +21,69 @@
     <main>
       <section class="container">
         <div class="wrapper">
-          <div class="form-wrapper">
-            <form action="" method="get">
-              <label for="dayID" id="dayID">
-                <p>DAY</p>
-                <input
-                  type="number"
-                  name="getDay"
-                  id="getDay"
-                  placeholder="DD"
-                />
-              </label>
-              <label for="monthID" id="monthID">
-                <p>MONTH</p>
-                <input
-                  type="number"
-                  name="getMonth"
-                  id="getMonth"
-                  placeholder="MM"
-                />
-              </label>
-              <label for="yearID" id="yearID">
-                <p>YEAR</p>
-                <input
-                  type="number"
-                  name="getYear"
-                  id="getYear"
-                  placeholder="YYYY"
-                />
-              </label>
-            </form>
+          <form action="" method="get">
+            <label for="dayID" id="dayID">
+              <p>DAY</p>
+              <input
+                type="number"
+                name="getDay"
+                id="getDay"
+                oninput="maxLengthCheck(this)"
+                placeholder="DD"
+                maxlength="2"
+              />
+            </label>
+            <label for="monthID" id="monthID">
+              <p>MONTH</p>
+              <input
+                type="number"
+                name="getMonth"
+                id="getMonth"
+                oninput="maxLengthCheck(this)"
+                placeholder="MM"
+                maxlength="2"
+              />
+            </label>
+            <label for="yearID" id="yearID">
+              <p>YEAR</p>
+              <input
+                type="number"
+                name="getYear"
+                id="getYear"
+                oninput="maxLengthCheck(this)"
+                placeholder="YYYY"
+                maxlength="4"
+              />
+            </label>
+          </form>
+
+          <div class="btnWrapper">
+            <button class="submitBtn" onclick="calculateResult(event)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="46"
+                height="44"
+                viewBox="0 0 46 44"
+              >
+                <g fill="none" stroke="#FFF" stroke-width="2">
+                  <path
+                    d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+                  />
+                </g>
+              </svg>
+            </button>
           </div>
-          <div class="btn-wrapper">
-            <!-- <div class="horizontal-lines"></div> -->
-            <input
-              type="image"
-              src="./assets/images/favicon-32x32.png"
-              alt="submitBtn"
-              class="submitBtn"
-            />
-          </div>
-          <div class="display-area-wrapper">
-            <h2 class="show-year-text">
-              <span id="show-year">--</span>
+          <div class="displayAreaWrapper">
+            <h2 class="showYearText">
+              <span id="showYear">- -</span>
               years
             </h2>
-            <h2 class="show-month-text">
-              <span id="show-month">--</span>
+            <h2 class="showMonthText">
+              <span id="showMonth">- -</span>
               month
             </h2>
-            <h2 class="show-day-text">
-              <span id="show-day">--</span>
+            <h2 class="showDayText">
+              <span id="showDay">- -</span>
               days
             </h2>
           </div>
