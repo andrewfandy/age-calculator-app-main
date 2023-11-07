@@ -64,7 +64,7 @@ input:focus{
 
 
 .submit-btn {
-    border: 0px;
+    border: 1px solid black;
     border-radius: 50%;
     height: 70px;
     width: 70px;
@@ -74,7 +74,19 @@ input:focus{
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    align-items: flex-end;
+    margin-left: auto;
+    border-left: 2px solid black; /* Creates the 'tail' line */
+
+}
+
+.submit-btn::before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Adjust the space as needed */
+    height: 70px; /* Match the button height */
+    background-color: transparent;
+    position: absolute;
+    left: -20px; /* Match the width of the pseudo-element */
 }
 
 .submit-btn:hover {
