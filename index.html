@@ -12,85 +12,68 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Age calculator app</title>
-
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
+
+    <title>Age App Calculator</title>
   </head>
   <body>
-    <main>
-      <section class="container">
-        <div class="wrapper">
-          <form action="" method="get">
-            <label for="dayID" id="dayID">
+    <section class="container">
+      <div class="wrapper">
+        <div class="form-wrapper">
+          <form action="">
+            <label for="getDay">
               <p>DAY</p>
-              <input
-                type="number"
-                name="getDay"
-                id="getDay"
-                oninput="maxLengthCheck(this)"
-                placeholder="DD"
-                maxlength="2"
-              />
+              <input type="number" name="getDay" id="getDay" placeholder="DD" />
             </label>
-            <label for="monthID" id="monthID">
+            <label for="getMonth">
               <p>MONTH</p>
               <input
                 type="number"
                 name="getMonth"
                 id="getMonth"
-                oninput="maxLengthCheck(this)"
                 placeholder="MM"
-                maxlength="2"
               />
             </label>
-            <label for="yearID" id="yearID">
+            <label for="getYear">
               <p>YEAR</p>
               <input
                 type="number"
                 name="getYear"
                 id="getYear"
-                oninput="maxLengthCheck(this)"
                 placeholder="YYYY"
-                maxlength="4"
               />
             </label>
           </form>
-
-          <div class="btnWrapper">
-            <button class="submitBtn" onclick="calculateResult(event)">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="46"
-                height="44"
-                viewBox="0 0 46 44"
-              >
-                <g fill="none" stroke="#FFF" stroke-width="2">
-                  <path
-                    d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-          <div class="displayAreaWrapper">
-            <h2 class="showYearText">
-              <span id="showYear">- -</span>
-              years
-            </h2>
-            <h2 class="showMonthText">
-              <span id="showMonth">- -</span>
-              month
-            </h2>
-            <h2 class="showDayText">
-              <span id="showDay">- -</span>
-              days
-            </h2>
-          </div>
+          <button type="submit" class="submit-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="46"
+              height="44"
+              viewBox="0 0 46 44"
+            >
+              <g fill="none" stroke="hsl(0, 0%, 100%)" stroke-width="2">
+                <path
+                  d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+                />
+              </g>
+            </svg>
+          </button>
         </div>
-      </section>
-    </main>
+        <div class="display-area-wrapper">
+          <span class="showDay">--</span>
+          <h1>years</h1>
+          <span class="showMonth">--</span>
+          <h1>months</h1>
+          <span class="showYear">--</span>
+          <h1>years</h1>
+        </div>
+      </div>
+    </section>
 
-    <footer>Created with love by Andrew</footer>
+    <footer>
+      Created by
+      <a href="github.com/andrewfandy" target="_blank">A N D R E W</a>
+    </footer>
   </body>
 </html>
