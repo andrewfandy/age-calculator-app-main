@@ -68,6 +68,7 @@ input:focus{
 }
 .submit-btn {
     outline: none;
+    border: 0px;
     position: relative;
     z-index: 1;
     border-radius: 50%;
@@ -81,20 +82,14 @@ input:focus{
     cursor: pointer;
 }
 
-.submit-btn::before {
-    content: '';
-    position: absolute;
-    height: 2px; /* Height of the tail */
-    background-color: #000; /* Color of the tail */
-    width: 100%; /* Full width of the submit-wrapper */
-    top: 50%; /* Center vertically */
-    left: 0; /* Start from the left side */
-    transform: translateY(-50%); /* Center the line vertically */
-    z-index: -1;
-  }
-
 .submit-btn:hover {
     background-color: hsl(0, 0%, 8%);
+}
+
+
+.display-area-wrapper h1,
+.display-area-wrapper span {
+    font-size: 40px;
 }
 
 /* FOOTER SECTION */
