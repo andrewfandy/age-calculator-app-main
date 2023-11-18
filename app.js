@@ -6,18 +6,14 @@ const userFormInputs = {
 
 
 Object.values(userFormInputs).forEach(input => {
+    const maxlength = input.getAttribute("maxlength");
     input.addEventListener("input", (event) => {
-        const maxlength = input.getAttribute("maxlength");
         if(event.target.value.length > maxlength){
             event.target.value =event.target.value.slice(0, maxlength);
         }
     })
-})
 
-Object.values(userFormInputs).forEach(input => {
     input.addEventListener("blur", (event) => {
-        const getInputValue = event.target.value;
-        const maxlength = input.getAttribute("maxlength");
         if(event.target.value.length !== maxlength) {
             event.target.value = "0".repeat(maxlength - event.target.value.length) + event.target.value;
         }
