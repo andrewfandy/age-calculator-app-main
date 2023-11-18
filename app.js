@@ -17,8 +17,9 @@ Object.values(userFormInputs).forEach(input => {
 Object.values(userFormInputs).forEach(input => {
     input.addEventListener("blur", (event) => {
         const getInputValue = event.target.value;
-        if(event.target.value.length === 1 && getInputValue <=9  && getInputValue >= 1) {
-            event.target.value = "0" + event.target.value;
+        const maxlength = input.getAttribute("maxlength");
+        if(event.target.value.length !== maxlength) {
+            event.target.value = "0".repeat(maxlength - event.target.value.length) + event.target.value;
         }
     })
 })
