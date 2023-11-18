@@ -12,76 +12,68 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <title>Frontend Mentor | Age calculator app</title>
 
-    <title>Age App Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="container">
       <div class="wrapper">
-        <div class="form-wrapper">
-          <form action="">
-            <label for="getDay">
-              <p>DAY</p>
-              <input type="number" name="getDay" id="getDay" placeholder="DD" />
-            </label>
-            <label for="getMonth">
-              <p>MONTH</p>
-              <input
-                type="number"
-                name="getMonth"
-                id="getMonth"
-                placeholder="MM"
-              />
-            </label>
-            <label for="getYear">
-              <p>YEAR</p>
-              <input
-                type="number"
-                name="getYear"
-                id="getYear"
-                placeholder="YYYY"
-              />
-            </label>
-          </form>
+        <div class="form-input-wrapper">
+          <div class="input-wrapper day">
+            <p class="text-input day">Day</p>
+            <input
+              type="number"
+              name="input-day"
+              id="inputDay"
+              placeholder="DD"
+              maxlength="2"
+            />
+          </div>
+          <div class="input-wrapper months">
+            <p class="text-input months">Month</p>
+            <input
+              type="number"
+              name="input-day"
+              id="inputMonth"
+              placeholder="MM"
+              maxlength="2"
+            />
+          </div>
+          <div class="input-wrapper day">
+            <p class="text-input year">Year</p>
+            <input
+              type="number"
+              name="input-day"
+              id="inputYear"
+              placeholder="YYYY"
+              maxlength="4"
+            />
+          </div>
         </div>
-        <div class="submit-wrapper">
-          <button type="submit" class="submit-btn" aria-label="Calculate Now">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="46"
-              height="44"
-              viewBox="0 0 46 44"
-            >
-              <g fill="none" stroke="hsl(0, 0%, 100%)" stroke-width="2">
-                <path
-                  d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
-                />
-              </g>
-            </svg>
-          </button>
+        <div class="submit-area-wrapper">
+          <div class="btn-wrapper">
+            <button type="submit"></button>
+          </div>
         </div>
         <div class="display-area-wrapper">
-          <div class="textWrapper">
-            <span id="showDay">--</span>
-            <h1>years</h1>
-          </div>
-          <div class="textWrapper">
-            <span id="showMonth">--</span>
-            <h1>months</h1>
-          </div>
-          <div class="textWrapper">
+          <div class="show-area year">
             <span id="showYear">--</span>
-            <h1>years</h1>
+            <span class="text-output year"> years </span>
+          </div>
+          <div class="show-area month">
+            <span id="showMonth">--</span>
+            <span class="text-output month"> months </span>
+          </div>
+          <div class="show-area day">
+            <span id="showDay">--</span>
+            <span class="text-output days"> years </span>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      Created by
-      <a href="github.com/andrewfandy" target="_blank">A N D R E W</a>
-    </footer>
+    <footer><a href="#">Andrew</a></footer>
+    <script src="app.js"></script>
   </body>
 </html>
