@@ -24,6 +24,8 @@ body {
 .form-input-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .input-wrapper {
@@ -36,7 +38,7 @@ body {
     padding: .25em .25em .25em .5em;
     max-width: 5em;
     outline: none;
-    border: 1px solid hsl(0, 0%, 86%);
+    border: 1px solid hsl(0, 1%, 44%);
     border-radius: .25em;
 }
 
@@ -54,6 +56,19 @@ body {
     margin: 0;
 }
 
+
+.submit-area-wrapper {
+    margin : 1rem 0;
+
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 5;
+}
+
 .btn-wrapper button {
     cursor: pointer;
     width: 75px;
@@ -64,12 +79,26 @@ body {
     background-color: hsl(259, 100%, 65%);
     background-position: center center;
     background-repeat: no-repeat;
-    transition: background-color 0.3s ease-out;
+    transition: background-color 0.2s ease-out;
+
+}
+
+.btn-wrapper button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    background-color: hsl(0, 1%, 44%);
+    width: 100%; /* Membentang ke kiri dari button */
+    transform: translateY(-50%);
+    z-index: -1
 }
 
 .btn-wrapper button:hover {
     background-color: hsl(0, 0%, 8%);
 }
+
 
 
 footer {
