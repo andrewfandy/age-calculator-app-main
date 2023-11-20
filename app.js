@@ -1,30 +1,20 @@
-const getInputElements = {
+// TODO 
+// REFACTORING INPUTELEMENTS
+
+
+const inputElements = {
     "userInputDay": document.getElementById("inputDay"),
     "userInputMonth": document.getElementById("inputMonth"),
     "userInputYear": document.getElementById("inputYear"),
 };
 
-const checkLeapYear = (year) => {
-    if(year % 400){
-        return 29
-    }
-}
-const calendarDay = {
-    "01" : 31,
-    "02" : checkLeapYear(getInputElements["userInputYear"].value),
-    "03" : 31,
-    "04" : 31,
-    "05" : 31,
-    "06" : 31,
-    "07" : 31,
-    "08" : 31,
-    "09" : 31,
-    "10" : 31,
-    "11" : 31,
-    "12" : 31,
+
+const getCalendarDay = (year, month) => {
+    return new Date(year, month, 0).getDate();
 }
 
-const validateInputLength = (input, maxlength) => {
+// Input Modification
+const modifyInputLength = (input, maxlength) => {
     if(input.value.length > maxlength){
         input.value = input.value.slice(0, maxlength);
     }
@@ -36,23 +26,38 @@ const modifyUserInput = (input, maxlength) => {
     }
 }
 
-const validateInputUser = (input, day, month, year) => {
-    
-}
-Object.values(getInputElements).forEach(input => {
+Object.values(inputElements).forEach(input => {
     const maxlength = input.getAttribute("maxlength");
     input.addEventListener("input", (event) => {
-        validateInputLength(event.target, maxlength);
+        modifyInputLength(event.target, maxlength);
     })
 
     input.addEventListener("blur", (event) => {
        modifyUserInput(event.target, maxlength);
-       validateInputUser(
-        event.target,
-        getInputElements["userInputDay"],
-        getInputElements["userInputMonth"],
-        getInputElements["userInputYear"],
-        )
     })
 })
+
+
+const inputValidation = {
+    isLeapYear : (day, month, year) => {
+        if(getCalendarDay(month, year) === day) {
+            return true;
+        }
+    }   
+}
+
+const submit = document.querySelector("button");
+
+submit.addEventListener("click", (event) => {
+    try {
+        const getUserInputValue = new Date (
+        parseInt(inputElements["userInputYear"].value), 
+        parseInt(inputElements["userInputMonth"].value), 
+        parseInt(inputElements["userInputDay"].value)
+        )
+        alert(getUserInputValue);
+    } catch (error) {
+        alert(error);
+    }
+    })
 
