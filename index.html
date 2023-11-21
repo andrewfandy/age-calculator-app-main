@@ -19,7 +19,7 @@
   <body>
     <section class="container">
       <div class="wrapper">
-        <div class="form-input-wrapper">
+        <form class="form-input-wrapper">
           <div class="input-wrapper day">
             <p class="text-input day">Day</p>
             <input
@@ -27,14 +27,13 @@
               name="input-day"
               id="inputDay"
               placeholder="DD"
-              maxlength="2"
             />
           </div>
           <div class="input-wrapper months">
             <p class="text-input months">Month</p>
             <input
               type="number"
-              name="input-day"
+              name="input-month"
               id="inputMonth"
               placeholder="MM"
               maxlength="2"
@@ -44,18 +43,19 @@
             <p class="text-input year">Year</p>
             <input
               type="number"
-              name="input-day"
+              name="input-year"
               id="inputYear"
               placeholder="YYYY"
               maxlength="4"
             />
           </div>
-        </div>
-        <div class="submit-area-wrapper">
-          <div class="btn-wrapper">
-            <button type="submit"></button>
+          <div class="submit-area-wrapper">
+            <div class="btn-wrapper">
+              <button type="submit"></button>
+            </div>
           </div>
-        </div>
+        </form>
+
         <div class="display-area-wrapper">
           <div class="show-area year">
             <span class="text-output show year" id="showYear">-- </span>
