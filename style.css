@@ -79,6 +79,7 @@ body {
     width: 4rem;
     height: 4rem;
     border-radius : 50%;
+    outline: none;
     border: none;
     background-image: url("/assets/images/icon-arrow.svg");
     background-size: 50%;
@@ -90,6 +91,10 @@ body {
 }
 .btn-wrapper button:hover {
     background-color: hsl(0, 0%, 8%);
+}
+
+.btn-wrapper button:focus {
+    background-color: hsl(259, 98%, 77%);
 }
 
 .btn-wrapper button::before {
