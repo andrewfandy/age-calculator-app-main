@@ -7,12 +7,12 @@ const inputElements = {
     getElement: document.getElementById("inputDay"),
     maxlength: 2,
     min: 1,
-    max: () => {
-      const yearValue = inputElements.inputYear.getElement.value;
-      const monthValue = inputElements.inputMonth.getElement.value;
-      return new Date(yearValue, monthValue, 0).getDate();
+    max: 31,
+    errorMsg: {
+      emptyError: "This field is required",
+      invalidError: "Must be a valid day",
+      errorDate: "Must be a valid date",
     },
-    errorMsg: "Must be a valid date",
   },
   inputMonth: {
     name: "inputMonth",
@@ -20,7 +20,11 @@ const inputElements = {
     maxlength: 2,
     min: 1,
     max: 12,
-    errorMsg: "Must be a valid month",
+    errorMsg: {
+      emptyError: "This field is required",
+      invalidError: "Must be a valid month",
+      errorDate: "",
+    },
   },
   inputYear: {
     name: "inputYear",
@@ -28,7 +32,11 @@ const inputElements = {
     maxlength: 4,
     min: 1,
     max: currentDate.getFullYear(),
-    errorMsg: "Must be a valid year",
+    errorMsg: {
+      emptyError: "This field is required",
+      invalidError: "Must be a valid year",
+      errorDate: "",
+    },
   },
 };
 
@@ -45,33 +53,42 @@ const modifyUserInput = (input, maxlength) => {
   }
 };
 
-// Input Validation
-
-// TODO
-// REVISED LOGIC ON APPENCHILD
+// Input Validation, must return true or false
+const showError = (msg, wrapper) => {
+  console.log(msg, wrapper);
+  return false;
+};
 const inputValidation = (inputElementObject, inputElement) => {
-  const errorColor = "red";
+  const errorMessages = inputElementObject.errorMsg;
+
   const getInputWrapper = document.querySelector(
     `.input-wrapper.${inputElementObject.name}`
   );
+  let isValid = true;
 
-  // change this
-  const errorMessages = document.createElement("p");
-  errorMessages.classList.add("error-messages");
-  if (
-    inputElement.value === "" ||
-    inputElement.value === null ||
-    inputElement.value === 1
-  ) {
-    inputElement.style.borderColor = errorColor;
-    errorMessages.textContent = "This field is required";
-    getInputWrapper.appendChild(errorMessages);
-  } else {
-    inputElement.style.borderColor = "";
-    errorMessages.textContent = "";
-    getInputWrapper.removeChild(errorMessages);
-    errorMessages.remove();
+  if (inputElement.value === "" || inputElement.value === null) {
+    isValid = showError(errorMessages.emptyError, getInputWrapper);
   }
+
+  const inputValue = parseInt(inputElement.value, 10);
+  // Invalid Day(Must be valid day), Month(Must be valid month), Year(must be in past)
+
+  if (
+    inputValue < inputElementObject.min ||
+    inputValue > inputElementObject.max
+  ) {
+    isValid = showError(errorMessages.invalidError, getInputWrapper);
+  }
+
+  // Invalid Date
+  const maximumDayOnMonth = () => {
+    const yearValue = inputElements.inputYear.getElement.value;
+    const monthValue = inputElements.inputMonth.getElement.value;
+    return new Date(yearValue, monthValue, 0).getDate();
+  };
+
+  console.log(maximumDayOnMonth === inputValue);
+  return isValid;
 };
 
 Object.values(inputElements).forEach((inputElementObject) => {
@@ -102,6 +119,6 @@ submit.addEventListener("click", (event) => {
   });
 
   if (isValid) {
-    displayResult();
+    console.log(true + " all");
   }
 });
