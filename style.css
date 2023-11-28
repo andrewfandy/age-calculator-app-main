@@ -119,10 +119,14 @@ body {
 }
 
 .error-message {
-   font-size: 0.75rem;
+   font-size: 0.95rem;
    position: absolute;
    color: hsl(0, 100%, 67%);
    font-style: italic;
+}
+
+.border-danger {
+   border: 1px solid hsl(0, 100%, 67%);
 }
 footer {
    display: flex;
@@ -139,6 +143,9 @@ footer a {
 }
 
 @media screen and (max-width: 790px) {
+   .submit-area-wrapper {
+      margin-top: 2em;
+   }
    .input-wrapper {
       margin: 0.75rem 2.5vw 0.75rem 0;
    }
@@ -160,9 +167,10 @@ footer a {
 }
 
 @media screen and (max-width: 450px) {
-   .submit-area-wrapper {
-      margin-top: 2em;
+   .error-message {
+      font-size: 0.75rem;
    }
+
    .form-input-wrapper {
       justify-content: center;
    }
